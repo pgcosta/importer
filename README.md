@@ -10,7 +10,6 @@
 # How to run the tests
 
 Simply type the following in the project's folder:
-
 ```rspec```
 
 # Requirements
