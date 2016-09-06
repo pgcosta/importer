@@ -1,6 +1,6 @@
 # How to use this
 
-1. set execute permitions to the file ```import``` by executing the following:
+1. set execute permitions to the file ```import`` by executing the following:
 ```chmod 755 import```
 
 2. use the script to import stuff. ie:
