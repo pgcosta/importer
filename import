@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+require_relative 'import_helper'
+require_relative 'capterra'
+require_relative 'software_advice'
+
+# include helper method to add the methods to interact with the user
+include ImportHelper
+
+# check is no arguments were passed or if the user requested help
+self.help if ARGV.size == 0 || ARGV[0] == 'h' || ARGV[0] == 'help'
+# check if the the second argument exists an is valid
+self.error if ARGV[1].nil? || self.path_invalid?(ARGV[1])
+
+instances = nil
+case ARGV[0]
+  when "capterra"
+    instances = Capterra.instanciate_from_resource ARGV[1]
+  when "software-advice"
+    instances = SoftwareAdvice.instanciate_from_resource ARGV[1]
+end
+
+# Call the toString method on each loaded instance
+instances.map(&:to_s) if !instances.nil?
